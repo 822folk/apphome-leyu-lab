@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>乐鱼体育 · 简易指引</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            min-height: 100vh;
+            background: linear-gradient(145deg, #fde9e0 0%, #fce4d6 35%, #f8d5c0 70%, #f5ccb5 100%);
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 3rem 1.5rem 4rem;
+            line-height: 1.7;
+            color: #2e241e;
+        }
+
+        .card {
+            max-width: 840px;
+            width: 100%;
+            background: #fffffffa;
+            backdrop-filter: blur(4px);
+            border-radius: 48px 48px 36px 36px;
+            box-shadow: 0 20px 40px rgba(140, 80, 50, 0.18), 0 8px 16px rgba(0,0,0,0.03);
+            padding: 2.8rem 2.8rem 3.2rem;
+            transition: all 0.2s ease;
+        }
+
+        @media (max-width: 580px) {
+            body { padding: 1.8rem 1rem 3rem; }
+            .card { padding: 2rem 1.5rem 2.4rem; border-radius: 36px; }
+        }
+
+        /* 开场短句 */
+        .opening {
+            font-size: 1.5rem;
+            font-weight: 380;
+            letter-spacing: 1px;
+            color: #7b4d36;
+            border-left: 5px solid #dd9e7c;
+            padding-left: 1.4rem;
+            margin-bottom: 2rem;
+            line-height: 1.5;
+        }
+
+        .opening strong {
+            font-weight: 520;
+            color: #573a29;
+        }
+
+        /* 承接段落 */
+        .intro-text {
+            font-size: 1.05rem;
+            margin-bottom: 2.6rem;
+            padding: 0.1rem 0.4rem;
+            color: #3f2e25;
+        }
+
+        .intro-text a {
+            color: #b26944;
+            font-weight: 520;
+            text-decoration: none;
+            border-bottom: 1.5px dashed #dbb09a;
+            transition: border 0.15s, color 0.15s;
+        }
+
+        .intro-text a:hover {
+            color: #7f4b31;
+            border-bottom-style: solid;
+        }
+
+        /* 特点列表 — 带温和图标感 */
+        .feature-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.2rem 1.8rem;
+            margin: 2.4rem 0 2.8rem;
+            padding: 0.2rem 0;
+        }
+
+        .feature-item {
+            flex: 1 1 180px;
+            background: #fdf6f1;
+            border-radius: 28px;
+            padding: 0.9rem 1.6rem 0.9rem 2rem;
+            list-style: none;
+            position: relative;
+            box-shadow: inset 0 1px 4px rgba(220, 160, 130, 0.08);
+            border: 1px solid #f1ddd1;
+            color: #3b2b21;
+            font-size: 1rem;
+        }
+
+        .feature-item::before {
+            content: "·";
+            position: absolute;
+            left: 0.8rem;
+            top: 0.75rem;
+            font-size: 1.8rem;
+            color: #ca8d6f;
+            line-height: 1;
+        }
+
+        .feature-item strong {
+            display: block;
+            font-weight: 560;
+            color: #5f3d2c;
+            margin-bottom: 0.15rem;
+        }
+
+        .feature-item span {
+            font-size: 0.92rem;
+            opacity: 0.88;
+        }
+
+        /* 场景小段落（温和结尾的前奏） */
+        .scene-note {
+            background: #fbf3ec;
+            border-radius: 32px;
+            padding: 1.5rem 2rem;
+            margin: 1.8rem 0 2.2rem;
+            border-left: 8px solid #dbaa8d;
+            font-size: 1rem;
+            color: #3d2d23;
+        }
+
+        .scene-note a {
+            color: #a15e3e;
+            font-weight: 500;
+            text-decoration: none;
+            border-bottom: 1.5px solid #ddb7a2;
+        }
+
+        .scene-note a:hover {
+            color: #714430;
+            border-bottom-color: #a66d4f;
+        }
+
+        /* 提醒摘要 — FAQ 风格 */
+        .reminder-box {
+            background: #fdf3ec;
+            border-radius: 28px;
+            padding: 1.2rem 1.8rem 1.4rem;
+            margin: 2.4rem 0 1.8rem;
+            border: 1px solid #ebd3c4;
+        }
+
+        .reminder-title {
+            font-weight: 520;
+            color: #5d3d2c;
+            font-size: 1.05rem;
+            margin-bottom: 0.6rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .reminder-title::before {
+            content: "☕";
+            font-size: 1.2rem;
+            opacity: 0.7;
+        }
+
+        .reminder-list {
+            padding-left: 1.2rem;
+            margin: 0.6rem 0 0.2rem;
+            list-style: none;
+        }
+
+        .reminder-list li {
+            position: relative;
+            padding-left: 1.4rem;
+            margin-bottom: 0.6rem;
+            font-size: 0.96rem;
+            color: #47362b;
+        }
+
+        .reminder-list li::before {
+            content: "—";
+            position: absolute;
+            left: 0;
+            color: #b98265;
+            font-weight: 300;
+        }
+
+        /* 温和结尾 */
+        .closing {
+            margin-top: 2.6rem;
+            padding-top: 0.8rem;
+            border-top: 1px solid #eedace;
+            font-size: 1.02rem;
+            color: #4d382b;
+            text-align: center;
+            letter-spacing: 0.3px;
+        }
+
+        .closing a {
+            color: #aa6f50;
+            font-weight: 500;
+            text-decoration: none;
+            border-bottom: 1.5px solid #dbb6a1;
+        }
+
+        .closing a:hover {
+            color: #7b4b33;
+            border-bottom-style: solid;
+        }
+
+        .closing small {
+            display: block;
+            margin-top: 0.8rem;
+            font-size: 0.83rem;
+            opacity: 0.7;
+        }
+
+        hr {
+            border: none;
+            height: 1px;
+            background: linear-gradient(to right, transparent, #e9cfbe, transparent);
+            margin: 0.2rem 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+
+        <!-- 开场短句 -->
+        <div class="opening">
+            <strong>乐鱼体育</strong> · 一份简明指南
+        </div>
+
+        <!-- 承接段落：从访问提醒切入，自然嵌入链接 -->
+        <div class="intro-text">
+            无论是日常浏览还是兴趣探索，稳定的入口常常让人省心不少。如果你正在找一处能方便查看体育相关内容的站点，不妨留意一下 <a href="https://apphome-leyu.com.cn">乐鱼体育</a>，它在呈现上偏简洁，适合快速浏览。下面的几个小提醒和特点，或许能帮你更快熟悉。
+        </div>
+
+        <!-- 特点列表 -->
+        <ul class="feature-grid">
+            <li class="feature-item">
+                <strong>首页直达</strong>
+                <span>结构清晰，主要栏目一目了然，减少翻找时间。</span>
+            </li>
+            <li class="feature-item">
+                <strong>内容分类</strong>
+                <span>常见项目与资讯分块展示，关注点更集中。</span>
+            </li>
+            <li class="feature-item">
+                <strong>访问友好</strong>
+                <span>页面加载相对轻快，对移动设备也有基础适配。</span>
+            </li>
+            <li class="feature-item">
+                <strong>日常可用</strong>
+                <span>适合作为信息查看的补充渠道，不复杂。</span>
+            </li>
+        </ul>
+
+        <!-- 场景小段落，进一步承接与链接 -->
+        <div class="scene-note">
+            <strong>📌 一个实际场景：</strong> 比如下午想简单看看最近的赛事动态，或者回顾一下某支队伍的表现，从 <a href="https://apphome-leyu.com.cn">乐鱼体育</a> 的首页入口进去，通常几步就能找到对应板块。不需要反复跳转，信息密度适中，对偶尔看看的人来说比较友好。
+        </div>
+
+        <!-- FAQ 摘要 / 提醒 -->
+        <div class="reminder-box">
+            <div class="reminder-title">一些实用小提醒</div>
+            <ul class="reminder-list">
+                <li>建议使用系统自带浏览器或常用浏览器，兼容性更稳定。</li>
+                <li>如果页面加载稍慢，可尝试刷新或检查网络环境。</li>
+                <li>网站内容以体育资讯、信息聚合为主，适合作为参考。</li>
+                <li>注意甄别信息来源，理性看待各类数据与报道。</li>
+            </ul>
+        </div>
+
+        <!-- 温和结尾，再次自然嵌入链接，但句子不同 -->
+        <div class="closing">
+            总的来说，如果你需要一个入口来快速接触体育相关内容，<a href="https://apphome-leyu.com.cn">乐鱼体育</a> 是一个可以考虑的方向。<br>
+            保持平常心浏览，按自己的节奏获取信息就好。
+            <small>本页仅为介绍 · 内容仅供参考</small>
+        </div>
+
+        <!-- 微注脚：风格统一 -->
+        <hr>
+        <div style="text-align: right; margin-top: 0.8rem; font-size: 0.75rem; color: #b59580; opacity: 0.5;">
+            · 从容浏览 ·
+        </div>
+
+    </div>
+</body>
+</html>
